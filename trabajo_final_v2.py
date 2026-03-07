@@ -55,7 +55,7 @@ class GestorTareas:
                 with open(self.archivo, "r", encoding="utf-8") as file:
                     datos = json.load(file)
                     
-                    # CORRECCIÓN APLICADA: Asignamos explícitamente cada llave del diccionario JSON 
+                    # AMPLIACIÓN APLICADA: Asignamos explícitamente cada llave del diccionario JSON 
                     # a su respectivo parámetro en el constructor de la clase Tarea para evitar el TypeError.
                     return [
                         Tarea(
@@ -227,4 +227,5 @@ def main():
             print("Opción inválida. Intente nuevamente.")
 
 if __name__ == "__main__":
+
     main()
