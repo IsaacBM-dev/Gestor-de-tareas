@@ -5,16 +5,12 @@ import os
 # Del módulo datetime, importamos la clase datetime para manejar y validar fechas.
 from datetime import datetime
 
-# ==========================================
 # CONSTANTES DEL SISTEMA
-# ==========================================
 # Tuplas para definir opciones inmutables del sistema
 PRIORIDADES_VALIDAS = ("Alta", "Media", "Baja")
 ESTADOS_VALIDOS = ("Pendiente", "Completo")
 
-# ==========================================
 # CLASES (Programación Orientada a Objetos)
-# ==========================================
 class Tarea:
     """Clase que representa una tarea individual en el sistema."""
     
@@ -55,7 +51,7 @@ class GestorTareas:
                 with open(self.archivo, "r", encoding="utf-8") as file:
                     datos = json.load(file)
                     
-                    # AMPLIACIÓN APLICADA: Asignamos explícitamente cada llave del diccionario JSON 
+                    # Asignamos explícitamente cada llave del diccionario JSON 
                     # a su respectivo parámetro en el constructor de la clase Tarea para evitar el TypeError.
                     return [
                         Tarea(
@@ -97,9 +93,7 @@ class GestorTareas:
             print("Error: Formato de fecha inválido. Use YYYY-MM-DD.")
             return None
 
-    # ==========================================
     # MÉTODOS CRUD (Crear, Leer, Actualizar, Eliminar)
-    # ==========================================
     def crear_tarea(self):
         print("\n--- NUEVA TAREA ---")
         descripcion = input("Descripción: ").strip()
@@ -194,9 +188,7 @@ class GestorTareas:
                 return
         print("Tarea no encontrada.")
 
-# ==========================================
 # BLOQUE PRINCIPAL DE EJECUCIÓN
-# ==========================================
 def main():
     print("=== SISTEMA DE GESTIÓN DE PROYECTOS ===")
     gestor = GestorTareas()
@@ -227,5 +219,4 @@ def main():
             print("Opción inválida. Intente nuevamente.")
 
 if __name__ == "__main__":
-
     main()
